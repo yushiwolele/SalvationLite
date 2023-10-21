@@ -1,0 +1,407 @@
+{% extends "layouts/base.html" %}
+{% load project_extras static %}
+{% block title %} 项目列表 {% endblock %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+<script>
+    function subpro() {
+        var prolist = document.getElementById('prolist')
+        prolist.style.display = "none";
+        var subprojects = document.getElementById('subprojects')
+        subprojects.style.display = "block";
+    }
+    function zhengchang() {
+        var allpros = document.getElementById('allpros');
+        allpros.style.display = "none";
+        var donepros = document.getElementById('donepros');
+        donepros.style.display = "none";
+        var normalpros = document.getElementById('normalpros');
+        normalpros.style.display = "block";
+
+        var threeitem = document.getElementById('threeitem');
+        threeitem.style.display = "none";
+        var twoitem = document.getElementById('twoitem');
+        twoitem.style.display = "block";
+        var oneitem = document.getElementById('oneitem');
+        oneitem.style.display = "none";
+
+    }
+    function jiexiang() {
+        var allpros = document.getElementById('allpros');
+        allpros.style.display = "none";
+        var donepros = document.getElementById('donepros');
+        donepros.style.display = "block";
+        var normalpros = document.getElementById('normalpros');
+        normalpros.style.display = "none";
+        var threeitem = document.getElementById('threeitem');
+        threeitem.style.display = "none";
+        var twoitem = document.getElementById('twoitem');
+        twoitem.style.display = "none";
+        var oneitem = document.getElementById('oneitem');
+        oneitem.style.display = "block";
+
+    }
+    function fuji() {
+        var prolist = document.getElementById('prolist');
+        prolist.style.display = "block";
+        var allpros = document.getElementById('allpros');
+        allpros.style.display = "block";
+        var donepros = document.getElementById('donepros');
+        donepros.style.display = "none";
+        var normalpros = document.getElementById('normalpros');
+        normalpros.style.display = "none";
+        var subprojects = document.getElementById('subprojects');
+        subprojects.style.display = "none";
+
+    }
+</script>
+    <div class="pcoded-content">
+        <div class="pcoded-inner-content">
+            <div class="page-header">
+                <div class="page-block">
+                    <div class="row align-items-center">
+                        <div class="col-md-12">
+                            <div class="page-header-title">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- [ breadcrumb ] end -->
+            <div class="main-body">
+                <div class="page-wrapper">
+                    <!-- [ Main Content ] start -->
+                    <div class="row">
+                        <!-- [ basic-table ] start -->
+                        <div class="col-xl-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5><span><i class="feather icon-home">  <a
+                                            href="{% url 'index' %}">首页</a></i></span>
+                                    </h5>
+                                    <span><i class="fa fa-map-marker"></i> 项目列表</span>
+                                </div>
+
+                                <div id= 'prolist' style="display: block" class="card-block">
+                                    <div class='row'>
+                                        <div class="col-8">
+                                            <div class="col-6">
+                                                <div class="btn-group ">
+                                                        <button id='zhuangtai' class="btn btn-light dropdown-toggle" type="button"
+                                                                data-toggle="dropdown" aria-haspopup="true"
+                                                                aria-expanded="false" style="display: block">项目状态
+                                                        </button>
+
+                                                    <div class="dropdown-menu">
+                                                        <a id='zhengchang' class="dropdown-item"
+                                                           onclick="zhengchang()">正常</a>
+                                                        <a class="dropdown-item"
+                                                           onclick="jiexiang()">结项</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-4">
+                                            <form class="form-inline mb-2">
+                                                <div class="form-group mx-sm-3 mb-2">
+                                                    <input type="text"
+                                                           class="form-control"
+                                                           name="search" ,
+                                                           id='search' ,
+                                                           placeholder="项目名称/负责人/创建人" ,
+                                                           value=>
+                                                </div>
+                                                <button type="submit" class="btn btn-secondary mb-2 btn-sm">搜索</button>
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                    <!--所有项目-->
+                                    <div id='allpros' style="display: block" class="table-responsive ">
+                                        <table class="table table-striped">
+                                            <thead>
+                                            <tr>
+                                                <th>id</th>
+                                                <th>项目名称</th>
+                                                <th>项目状态</th>
+                                                <th>项目版本</th>
+                                                <th>项目负责人</th>
+                                                <th>子项目</th>
+                                                <th>总用例</th>
+                                                <th>可查看用例</th>
+                                                <th>创建时间</th>
+                                                <th>更新时间</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">1</th>
+                                                    <td>EDW2021017-EDW门户上海信息披露义务人查询结果加盖电子凭证及新增发送上海PROP接口功能</td>
+                                                    <td>正常</td>
+                                                    <td>EDW2021017-01</td>
+                                                    <td>张三</td>
+                                                    <td><a style="color: #1b93e1;cursor: pointer" onclick="subpro()">查看</a></td>
+                                                    <td>100</td>
+                                                    <td>50</td>
+                                                    <td>2023年8月1日 9:00</td>
+                                                    <td>2023年8月16日 9:00</td>
+                                                </tr>
+
+                                                <tr>
+                                                    <th scope="row">2</th>
+                                                    <td>EDW2021112-异常账户监测系统三期建设</td>
+                                                    <td>结项</td>
+                                                    <td>EDW2021112-07</td>
+                                                    <td>李四</td>
+                                                    <td><a style="color: #1b93e1;cursor: pointer" onclick="subpro()">查看</a></td>
+                                                    <td>500</td>
+                                                    <td>500</td>
+                                                    <td>2023年8月1日 9:00</td>
+                                                    <td>2023年8月16日 9:00</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">3</th>
+                                                    <td>EDW2022007-公司大数据平台建设项目（三期）统一风险监测系统迁移项目</td>
+                                                    <td>正常</td>
+                                                    <td>EDW2022007-07</td>
+                                                    <td>李四</td>
+                                                    <td><a style="color: #1b93e1;cursor: pointer" onclick="subpro()">查看</a></td>
+                                                    <td>500</td>
+                                                    <td>500</td>
+                                                    <td>2023年8月1日 9:00</td>
+                                                    <td>2023年8月16日 9:00</td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <!--结项-->
+                                    <div id='donepros' style="display: none" class="table-responsive ">
+                                        <table class="table table-striped">
+                                            <thead>
+                                            <tr>
+                                                <th>id</th>
+                                                <th>项目名称</th>
+                                                <th>项目状态</th>
+                                                <th>项目版本</th>
+                                                <th>项目负责人</th>
+                                                <th>子项目</th>
+                                                <th>总用例</th>
+                                                <th>可查看用例</th>
+                                                <th>创建时间</th>
+                                                <th>更新时间</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">2</th>
+                                                    <td>EDW2021112-异常账户监测系统三期建设</td>
+                                                    <td>结项</td>
+                                                    <td>EDW2021112-07</td>
+                                                    <td>李四</td>
+                                                    <td><a style="color: #1b93e1;cursor: pointer" onclick="subpro()">查看</a></td>
+                                                    <td>500</td>
+                                                    <td>500</td>
+                                                    <td>2023年8月1日 9:00</td>
+                                                    <td>2023年8月16日 9:00</td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <!--正常-->
+                                     <div id='normalpros' style="display: none" class="table-responsive ">
+                                        <table class="table table-striped">
+                                            <thead>
+                                            <tr>
+                                                <th>id</th>
+                                                <th>项目名称</th>
+                                                <th>项目状态</th>
+                                                <th>项目版本</th>
+                                                <th>项目负责人</th>
+                                                <th>子项目</th>
+                                                <th>总用例</th>
+                                                <th>可查看用例</th>
+                                                <th>创建时间</th>
+                                                <th>更新时间</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">1</th>
+                                                    <td>EDW2021017-EDW门户上海信息披露义务人查询结果加盖电子凭证及新增发送上海PROP接口功能</td>
+                                                    <td>正常</td>
+                                                    <td>EDW2021017-01</td>
+                                                    <td>张三</td>
+                                                    <td><a style="color: #1b93e1;cursor: pointer" onclick="subpro()">查看</a></td>
+                                                    <td>100</td>
+                                                    <td>50</td>
+                                                    <td>2023年8月1日 9:00</td>
+                                                    <td>2023年8月16日 9:00</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">3</th>
+                                                    <td>EDW2022007-公司大数据平台建设项目（三期）统一风险监测系统迁移项目</td>
+                                                    <td>正常</td>
+                                                    <td>EDW2022007-07</td>
+                                                    <td>李四</td>
+                                                    <td><a style="color: #1b93e1;cursor: pointer" onclick="subpro()">查看</a></td>
+                                                    <td>500</td>
+                                                    <td>500</td>
+                                                    <td>2023年8月1日 9:00</td>
+                                                    <td>2023年8月16日 9:00</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <div class="row">
+                                        <div id='threeitem' style="display: block" class='col-4'>
+                                            <a>合计3条</a>
+                                        </div>
+                                        <div id='twoitem' style="display: none" class='col-4'>
+                                            <a>合计2条</a>
+                                        </div>
+                                        <div id='oneitem' style="display: none" class='col-4'>
+                                            <a>合计1条</a>
+                                        </div>
+                                        <div class='col-8'>
+                                            {% show_pagination %}
+                                        </div>
+                                        <div class='col-8'>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--子项目页面-->
+                                <div id='subprojects' style="display: none" class="card-block">
+                                    <div class='row'>
+                                        <div class="col-8">
+                                            <div class="col-6">
+                                                <div class="btn-group ">
+                                                    <button class="btn btn-light" type="button"
+                                                            aria-haspopup="true"
+                                                            aria-expanded="false">子项目
+                                                    </button>
+                                                    <div class="col-3"></div>
+                                                    <button class="btn btn-light" type="button"
+                                                            aria-haspopup="true"
+                                                            aria-expanded="false">返回
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-4">
+                                            <form class="form-inline mb-2">
+                                                <div class="form-group mx-sm-3 mb-2">
+                                                    <input type="text"
+                                                           class="form-control"
+                                                           name="search" ,
+                                                           id='search' ,
+                                                           placeholder="项目名称/负责人/创建人" ,
+                                                           value=>
+                                                </div>
+                                                <button type="submit" class="btn btn-secondary mb-2 btn-sm">搜索</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="table-responsive ">
+                                        <table class="table table-striped">
+                                            <thead>
+                                            <tr>
+                                                <th>id</th>
+                                                <th>项目名称</th>
+                                                <th>项目状态</th>
+                                                <th>项目版本</th>
+                                                <th>项目负责人</th>
+                                                <th>父项目</th>
+                                                <th>总用例</th>
+                                                <th>可查看用例</th>
+                                                <th>创建时间</th>
+                                                <th>更新时间</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">1</th>
+                                                    <td>EDW2022007-P1-历史数据迁移</td>
+                                                    <td>正常</td> <!--和父项目报纸一致-->
+                                                    <td>项目版本</td>
+                                                    <td>王五</td>
+                                                    <td><a style="color: #1b93e1;cursor: pointer" onclick="fuji()">EDW2022007-公司大数据平台建设项目（三期）统一风险监测系统迁移项目</a></td>
+                                                    <td>50</td>
+                                                    <td>50</td>
+                                                    <td>2023年8月1日 9:00</td>
+                                                    <td>2023年8月16日 9:00</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2</th>
+                                                    <td>EDW2022007-P2-日常加载迁移</td>
+                                                    <td>正常</td> <!--和父项目报纸一致-->
+                                                    <td>项目版本</td>
+                                                    <td>张三</td>
+                                                    <td><a style="color: #1b93e1;cursor: pointer" onclick="fuji()">EDW2022007-公司大数据平台建设项目（三期）统一风险监测系统迁移项目</a></td>
+                                                    <td>100</td>
+                                                    <td>50</td>
+                                                    <td>2023年8月1日 9:00</td>
+                                                    <td>2023年8月16日 9:00</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">3</th>
+                                                    <td>EDW2022007-P3-第一批指标功能迁移</td>
+                                                    <td>正常</td> <!--和父项目报纸一致-->
+                                                    <td>项目版本</td>
+                                                    <td>张三</td>
+                                                    <td><a style="color: #1b93e1;cursor: pointer" onclick="fuji()">EDW2022007-公司大数据平台建设项目（三期）统一风险监测系统迁移项目</a></td>
+                                                    <td>100</td>
+                                                    <td>50</td>
+                                                    <td>2023年8月1日 9:00</td>
+                                                    <td>2023年8月16日 9:00</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">4</th>
+                                                    <td>EDW2022007-P8-风险维度功能迁移</td>
+                                                    <td>正常</td> <!--和父项目报纸一致-->
+                                                    <td>项目版本</td>
+                                                    <td>张三</td>
+                                                    <td><a style="color: #1b93e1;cursor: pointer" onclick="fuji()">EDW2022007-公司大数据平台建设项目（三期）统一风险监测系统迁移项目</a></td>
+                                                    <td>100</td>
+                                                    <td>100</td>
+                                                    <td>2023年8月1日 9:00</td>
+                                                    <td>2023年8月16日 9:00</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="row">
+                                        <div class='col-4'>
+                                            <a>合计4条</a>
+                                        </div>
+                                        <div class='col-8'>
+                                            {% show_pagination %}
+                                        </div>
+                                        <div class='col-8'>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+{% endblock javascripts %}

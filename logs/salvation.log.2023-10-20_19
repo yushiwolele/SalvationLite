@@ -1,0 +1,155 @@
+[INFO][2023-10-20 10:55:09,151][reuseCommonTestCases_service.py:75]--要合并测试点: 前端功能页面
+[INFO][2023-10-20 10:55:09,151][reuseCommonTestCases_service.py:91]--功能名称+数据等级:结算信息汇总查询-沪（Ⅰ级）
+[INFO][2023-10-20 10:55:09,151][reuseCommonTestCases_service.py:96]--待复制的控件: 查询时段 ['清算日期']
+[INFO][2023-10-20 10:55:09,151][reuseCommonTestCases_service.py:96]--待复制的控件: 单项输入框 ['挂牌年份']
+[INFO][2023-10-20 10:55:09,151][reuseCommonTestCases_service.py:96]--待复制的控件: 左右互选框 ['交收会员', '结果代码', '结算单元', '证券账户', '证券代码Ⅰ', '资金账号']
+[INFO][2023-10-20 10:55:09,151][reuseCommonTestCases_service.py:96]--待复制的控件: 多项选择框 ['记录类型', '交收方式', '交易方式', '清算标志', '市场代码', '业务类型']
+[INFO][2023-10-20 10:55:09,151][reuseCommonTestCases_service.py:96]--待复制的控件: 单选下拉列表 ['流通类型', '买卖标志', '权益类别', '账户性质', '证券类别']
+[INFO][2023-10-20 10:55:09,151][reuseCommonTestCases_service.py:96]--待复制的控件: 查询按钮 ['查询']
+[INFO][2023-10-20 10:55:09,151][reuseCommonTestCases_service.py:96]--待复制的控件: 重置按钮 ['重置']
+[INFO][2023-10-20 10:55:09,151][reuseCommonTestCases_service.py:96]--待复制的控件: 查询报表 ['Cognos报表']
+[INFO][2023-10-20 10:55:15,745][reuseCommonTestCases_service.py:91]--功能名称+数据等级:资金账余额变动查询_深（Ⅰ级）
+[INFO][2023-10-20 10:55:15,745][reuseCommonTestCases_service.py:96]--待复制的控件: 查询时段 ['查询日期']
+[INFO][2023-10-20 10:55:15,745][reuseCommonTestCases_service.py:96]--待复制的控件: 多项输入框 ['资金明细账号', '结算参与人代号', '结算参与人名称']
+[INFO][2023-10-20 10:55:15,745][reuseCommonTestCases_service.py:96]--待复制的控件: 查询按钮 ['查询']
+[INFO][2023-10-20 10:55:15,745][reuseCommonTestCases_service.py:96]--待复制的控件: 重置按钮 ['重置']
+[INFO][2023-10-20 10:55:15,745][reuseCommonTestCases_service.py:96]--待复制的控件: 查询报表 ['Cognos报表']
+[INFO][2023-10-20 13:58:18,119][reuseCommonTestCases_service.py:75]--要合并测试点: 前端功能页面
+[INFO][2023-10-20 13:58:18,135][reuseCommonTestCases_service.py:91]--功能名称+数据等级:结算信息汇总查询-沪（Ⅰ级）
+[INFO][2023-10-20 13:58:18,136][reuseCommonTestCases_service.py:96]--待复制的控件: 查询时段 ['清算日期']
+[INFO][2023-10-20 13:58:18,136][reuseCommonTestCases_service.py:96]--待复制的控件: 单项输入框 ['挂牌年份']
+[INFO][2023-10-20 13:58:18,136][reuseCommonTestCases_service.py:96]--待复制的控件: 左右互选框 ['交收会员', '结果代码', '结算单元', '证券账户', '证券代码Ⅰ', '资金账号']
+[INFO][2023-10-20 13:58:18,136][reuseCommonTestCases_service.py:96]--待复制的控件: 多项选择框 ['记录类型', '交收方式', '交易方式', '清算标志', '市场代码', '业务类型']
+[INFO][2023-10-20 13:58:18,136][reuseCommonTestCases_service.py:96]--待复制的控件: 单选下拉列表 ['流通类型', '买卖标志', '权益类别', '账户性质', '证券类别']
+[INFO][2023-10-20 13:58:18,136][reuseCommonTestCases_service.py:96]--待复制的控件: 查询按钮 ['查询']
+[INFO][2023-10-20 13:58:18,136][reuseCommonTestCases_service.py:96]--待复制的控件: 重置按钮 ['重置']
+[INFO][2023-10-20 13:58:18,136][reuseCommonTestCases_service.py:96]--待复制的控件: 查询报表 ['Cognos报表']
+[INFO][2023-10-20 14:00:59,447][reuseCommonTestCases_service.py:75]--要合并测试点: 前端功能页面
+[INFO][2023-10-20 14:00:59,447][reuseCommonTestCases_service.py:91]--功能名称+数据等级:结算信息汇总查询-沪（Ⅰ级）
+[INFO][2023-10-20 14:00:59,447][reuseCommonTestCases_service.py:96]--待复制的控件: 查询时段 ['清算日期']
+[INFO][2023-10-20 14:00:59,447][reuseCommonTestCases_service.py:96]--待复制的控件: 单项输入框 ['挂牌年份']
+[INFO][2023-10-20 14:00:59,447][reuseCommonTestCases_service.py:96]--待复制的控件: 左右互选框 ['交收会员', '结果代码', '结算单元', '证券账户', '证券代码Ⅰ', '资金账号']
+[INFO][2023-10-20 14:00:59,447][reuseCommonTestCases_service.py:96]--待复制的控件: 多项选择框 ['记录类型', '交收方式', '交易方式', '清算标志', '市场代码', '业务类型']
+[INFO][2023-10-20 14:00:59,447][reuseCommonTestCases_service.py:96]--待复制的控件: 单选下拉列表 ['流通类型', '买卖标志', '权益类别', '账户性质', '证券类别']
+[INFO][2023-10-20 14:00:59,447][reuseCommonTestCases_service.py:96]--待复制的控件: 查询按钮 ['查询']
+[INFO][2023-10-20 14:00:59,447][reuseCommonTestCases_service.py:96]--待复制的控件: 重置按钮 ['重置']
+[INFO][2023-10-20 14:00:59,447][reuseCommonTestCases_service.py:96]--待复制的控件: 查询报表 ['Cognos报表']
+[INFO][2023-10-20 14:21:41,342][reuseCommonTestCases_service.py:75]--要合并测试点: 前端功能页面
+[INFO][2023-10-20 14:21:41,342][reuseCommonTestCases_service.py:91]--功能名称+数据等级:结算信息汇总查询-沪（Ⅰ级）
+[INFO][2023-10-20 14:21:41,342][reuseCommonTestCases_service.py:96]--待复制的控件: 查询时段 ['清算日期']
+[INFO][2023-10-20 14:21:41,342][reuseCommonTestCases_service.py:96]--待复制的控件: 单项输入框 ['挂牌年份']
+[INFO][2023-10-20 14:21:41,342][reuseCommonTestCases_service.py:96]--待复制的控件: 左右互选框 ['交收会员', '结果代码', '结算单元', '证券账户', '证券代码Ⅰ', '资金账号']
+[INFO][2023-10-20 14:21:41,342][reuseCommonTestCases_service.py:96]--待复制的控件: 多项选择框 ['记录类型', '交收方式', '交易方式', '清算标志', '市场代码', '业务类型']
+[INFO][2023-10-20 14:21:41,342][reuseCommonTestCases_service.py:96]--待复制的控件: 单选下拉列表 ['流通类型', '买卖标志', '权益类别', '账户性质', '证券类别']
+[INFO][2023-10-20 14:21:41,342][reuseCommonTestCases_service.py:96]--待复制的控件: 查询按钮 ['查询']
+[INFO][2023-10-20 14:21:41,342][reuseCommonTestCases_service.py:96]--待复制的控件: 重置按钮 ['重置']
+[INFO][2023-10-20 14:21:41,342][reuseCommonTestCases_service.py:96]--待复制的控件: 查询报表 ['Cognos报表']
+[INFO][2023-10-20 14:21:53,495][reuseCommonTestCases_service.py:91]--功能名称+数据等级:资金账余额变动查询_深（Ⅰ级）
+[INFO][2023-10-20 14:21:53,495][reuseCommonTestCases_service.py:96]--待复制的控件: 查询时段 ['查询日期']
+[INFO][2023-10-20 14:21:53,495][reuseCommonTestCases_service.py:96]--待复制的控件: 多项输入框 ['资金明细账号', '结算参与人代号', '结算参与人名称']
+[INFO][2023-10-20 14:21:53,495][reuseCommonTestCases_service.py:96]--待复制的控件: 查询按钮 ['查询']
+[INFO][2023-10-20 14:21:53,495][reuseCommonTestCases_service.py:96]--待复制的控件: 重置按钮 ['重置']
+[INFO][2023-10-20 14:21:53,495][reuseCommonTestCases_service.py:96]--待复制的控件: 查询报表 ['Cognos报表']
+[INFO][2023-10-20 14:48:54,274][reuseCommonTestCases_service.py:75]--要合并测试点: 前端功能页面
+[INFO][2023-10-20 14:48:54,274][reuseCommonTestCases_service.py:91]--功能名称+数据等级:结算信息汇总查询-沪（Ⅰ级）
+[INFO][2023-10-20 14:48:54,274][reuseCommonTestCases_service.py:96]--待复制的控件: 查询时段 ['清算日期']
+[INFO][2023-10-20 14:48:54,274][reuseCommonTestCases_service.py:96]--待复制的控件: 单项输入框 ['挂牌年份']
+[INFO][2023-10-20 14:48:54,274][reuseCommonTestCases_service.py:96]--待复制的控件: 左右互选框 ['交收会员', '结果代码', '结算单元', '证券账户', '证券代码Ⅰ', '资金账号']
+[INFO][2023-10-20 14:48:54,274][reuseCommonTestCases_service.py:96]--待复制的控件: 多项选择框 ['记录类型', '交收方式', '交易方式', '清算标志', '市场代码', '业务类型']
+[INFO][2023-10-20 14:48:54,274][reuseCommonTestCases_service.py:96]--待复制的控件: 单选下拉列表 ['流通类型', '买卖标志', '权益类别', '账户性质', '证券类别']
+[INFO][2023-10-20 14:48:54,274][reuseCommonTestCases_service.py:96]--待复制的控件: 查询按钮 ['查询']
+[INFO][2023-10-20 14:48:54,274][reuseCommonTestCases_service.py:96]--待复制的控件: 重置按钮 ['重置']
+[INFO][2023-10-20 14:48:54,274][reuseCommonTestCases_service.py:96]--待复制的控件: 查询报表 ['Cognos报表']
+[INFO][2023-10-20 14:49:01,405][reuseCommonTestCases_service.py:91]--功能名称+数据等级:资金账余额变动查询_深（Ⅰ级）
+[INFO][2023-10-20 14:49:01,405][reuseCommonTestCases_service.py:96]--待复制的控件: 查询时段 ['查询日期']
+[INFO][2023-10-20 14:49:01,405][reuseCommonTestCases_service.py:96]--待复制的控件: 多项输入框 ['资金明细账号', '结算参与人代号', '结算参与人名称']
+[INFO][2023-10-20 14:49:01,405][reuseCommonTestCases_service.py:96]--待复制的控件: 查询按钮 ['查询']
+[INFO][2023-10-20 14:49:01,421][reuseCommonTestCases_service.py:96]--待复制的控件: 重置按钮 ['重置']
+[INFO][2023-10-20 14:49:01,421][reuseCommonTestCases_service.py:96]--待复制的控件: 查询报表 ['Cognos报表']
+[INFO][2023-10-20 15:00:26,393][reuseCommonTestCases_service.py:74]--要合并测试点: 前端功能页面
+[INFO][2023-10-20 15:03:05,093][reuseCommonTestCases_service.py:90]--功能名称+数据等级:结算信息汇总查询-沪（Ⅰ级）
+[INFO][2023-10-20 15:03:47,711][reuseCommonTestCases_service.py:95]--待复制的控件: 查询时段 ['清算日期']
+[INFO][2023-10-20 15:04:08,821][reuseCommonTestCases_service.py:95]--待复制的控件: 单项输入框 ['挂牌年份']
+[INFO][2023-10-20 15:04:15,745][reuseCommonTestCases_service.py:95]--待复制的控件: 左右互选框 ['交收会员', '结果代码', '结算单元', '证券账户', '证券代码Ⅰ', '资金账号']
+[INFO][2023-10-20 15:04:46,010][reuseCommonTestCases_service.py:95]--待复制的控件: 多项选择框 ['记录类型', '交收方式', '交易方式', '清算标志', '市场代码', '业务类型']
+[INFO][2023-10-20 15:04:59,939][reuseCommonTestCases_service.py:95]--待复制的控件: 单选下拉列表 ['流通类型', '买卖标志', '权益类别', '账户性质', '证券类别']
+[INFO][2023-10-20 15:05:43,077][reuseCommonTestCases_service.py:95]--待复制的控件: 查询按钮 ['查询']
+[INFO][2023-10-20 15:05:46,298][reuseCommonTestCases_service.py:95]--待复制的控件: 重置按钮 ['重置']
+[INFO][2023-10-20 15:06:02,084][reuseCommonTestCases_service.py:95]--待复制的控件: 查询报表 ['Cognos报表']
+[INFO][2023-10-20 15:20:45,208][reuseCommonTestCases_service.py:90]--功能名称+数据等级:资金账余额变动查询_深（Ⅰ级）
+[INFO][2023-10-20 15:20:48,583][reuseCommonTestCases_service.py:95]--待复制的控件: 查询时段 ['查询日期']
+[INFO][2023-10-20 15:20:50,919][reuseCommonTestCases_service.py:95]--待复制的控件: 多项输入框 ['资金明细账号', '结算参与人代号', '结算参与人名称']
+[INFO][2023-10-20 15:20:50,921][reuseCommonTestCases_service.py:95]--待复制的控件: 查询按钮 ['查询']
+[INFO][2023-10-20 15:20:50,922][reuseCommonTestCases_service.py:95]--待复制的控件: 重置按钮 ['重置']
+[INFO][2023-10-20 15:20:50,923][reuseCommonTestCases_service.py:95]--待复制的控件: 查询报表 ['Cognos报表']
+[INFO][2023-10-20 15:28:48,896][reuseCommonTestCases_service.py:74]--要合并测试点: 前端功能页面
+[INFO][2023-10-20 15:28:48,897][reuseCommonTestCases_service.py:90]--功能名称+数据等级:结算信息汇总查询-沪（Ⅰ级）
+[INFO][2023-10-20 15:28:48,898][reuseCommonTestCases_service.py:95]--待复制的控件: 查询时段 ['清算日期']
+[INFO][2023-10-20 15:28:48,898][reuseCommonTestCases_service.py:95]--待复制的控件: 单项输入框 ['挂牌年份']
+[INFO][2023-10-20 15:28:48,898][reuseCommonTestCases_service.py:95]--待复制的控件: 左右互选框 ['交收会员', '结果代码', '结算单元', '证券账户', '证券代码Ⅰ', '资金账号']
+[INFO][2023-10-20 15:28:48,899][reuseCommonTestCases_service.py:95]--待复制的控件: 多项选择框 ['记录类型', '交收方式', '交易方式', '清算标志', '市场代码', '业务类型']
+[INFO][2023-10-20 15:28:48,899][reuseCommonTestCases_service.py:95]--待复制的控件: 单选下拉列表 ['流通类型', '买卖标志', '权益类别', '账户性质', '证券类别']
+[INFO][2023-10-20 15:28:48,899][reuseCommonTestCases_service.py:95]--待复制的控件: 查询按钮 ['查询']
+[INFO][2023-10-20 15:28:48,899][reuseCommonTestCases_service.py:95]--待复制的控件: 重置按钮 ['重置']
+[INFO][2023-10-20 15:28:48,900][reuseCommonTestCases_service.py:95]--待复制的控件: 查询报表 ['Cognos报表']
+[INFO][2023-10-20 15:28:55,453][reuseCommonTestCases_service.py:90]--功能名称+数据等级:资金账余额变动查询_深（Ⅰ级）
+[INFO][2023-10-20 15:28:55,453][reuseCommonTestCases_service.py:95]--待复制的控件: 查询时段 ['查询日期']
+[INFO][2023-10-20 15:28:55,454][reuseCommonTestCases_service.py:95]--待复制的控件: 多项输入框 ['资金明细账号', '结算参与人代号', '结算参与人名称']
+[INFO][2023-10-20 15:28:55,454][reuseCommonTestCases_service.py:95]--待复制的控件: 查询按钮 ['查询']
+[INFO][2023-10-20 15:28:55,454][reuseCommonTestCases_service.py:95]--待复制的控件: 重置按钮 ['重置']
+[INFO][2023-10-20 15:28:55,454][reuseCommonTestCases_service.py:95]--待复制的控件: 查询报表 ['Cognos报表']
+[INFO][2023-10-20 15:31:30,932][reuseCommonTestCases_service.py:74]--要合并测试点: 前端功能页面
+[INFO][2023-10-20 15:31:30,933][reuseCommonTestCases_service.py:90]--功能名称+数据等级:结算信息汇总查询-沪（Ⅰ级）
+[INFO][2023-10-20 15:31:30,933][reuseCommonTestCases_service.py:95]--待复制的控件: 查询时段 ['清算日期']
+[INFO][2023-10-20 15:31:30,934][reuseCommonTestCases_service.py:95]--待复制的控件: 单项输入框 ['挂牌年份']
+[INFO][2023-10-20 15:31:30,934][reuseCommonTestCases_service.py:95]--待复制的控件: 左右互选框 ['交收会员', '结果代码', '结算单元', '证券账户', '证券代码Ⅰ', '资金账号']
+[INFO][2023-10-20 15:31:30,934][reuseCommonTestCases_service.py:95]--待复制的控件: 多项选择框 ['记录类型', '交收方式', '交易方式', '清算标志', '市场代码', '业务类型']
+[INFO][2023-10-20 15:31:30,934][reuseCommonTestCases_service.py:95]--待复制的控件: 单选下拉列表 ['流通类型', '买卖标志', '权益类别', '账户性质', '证券类别']
+[INFO][2023-10-20 15:31:30,934][reuseCommonTestCases_service.py:95]--待复制的控件: 查询按钮 ['查询']
+[INFO][2023-10-20 15:31:30,935][reuseCommonTestCases_service.py:95]--待复制的控件: 重置按钮 ['重置']
+[INFO][2023-10-20 15:31:30,935][reuseCommonTestCases_service.py:95]--待复制的控件: 查询报表 ['Cognos报表']
+[INFO][2023-10-20 15:31:37,882][reuseCommonTestCases_service.py:90]--功能名称+数据等级:资金账余额变动查询_深（Ⅰ级）
+[INFO][2023-10-20 15:31:37,883][reuseCommonTestCases_service.py:95]--待复制的控件: 查询时段 ['查询日期']
+[INFO][2023-10-20 15:31:37,883][reuseCommonTestCases_service.py:95]--待复制的控件: 多项输入框 ['资金明细账号', '结算参与人代号', '结算参与人名称']
+[INFO][2023-10-20 15:31:37,883][reuseCommonTestCases_service.py:95]--待复制的控件: 查询按钮 ['查询']
+[INFO][2023-10-20 15:31:37,884][reuseCommonTestCases_service.py:95]--待复制的控件: 重置按钮 ['重置']
+[INFO][2023-10-20 15:31:37,884][reuseCommonTestCases_service.py:95]--待复制的控件: 查询报表 ['Cognos报表']
+[INFO][2023-10-20 15:35:24,089][reuseCommonTestCases_service.py:74]--要合并测试点: 前端功能页面
+[INFO][2023-10-20 15:35:24,090][reuseCommonTestCases_service.py:90]--功能名称+数据等级:结算信息汇总查询-沪（Ⅰ级）
+[INFO][2023-10-20 15:35:24,090][reuseCommonTestCases_service.py:95]--待复制的控件: 查询时段 ['清算日期']
+[INFO][2023-10-20 15:35:24,091][reuseCommonTestCases_service.py:95]--待复制的控件: 单项输入框 ['挂牌年份']
+[INFO][2023-10-20 15:35:24,091][reuseCommonTestCases_service.py:95]--待复制的控件: 左右互选框 ['交收会员', '结果代码', '结算单元', '证券账户', '证券代码Ⅰ', '资金账号']
+[INFO][2023-10-20 15:35:24,091][reuseCommonTestCases_service.py:95]--待复制的控件: 多项选择框 ['记录类型', '交收方式', '交易方式', '清算标志', '市场代码', '业务类型']
+[INFO][2023-10-20 15:35:24,091][reuseCommonTestCases_service.py:95]--待复制的控件: 单选下拉列表 ['流通类型', '买卖标志', '权益类别', '账户性质', '证券类别']
+[INFO][2023-10-20 15:35:24,092][reuseCommonTestCases_service.py:95]--待复制的控件: 查询按钮 ['查询']
+[INFO][2023-10-20 15:35:24,092][reuseCommonTestCases_service.py:95]--待复制的控件: 重置按钮 ['重置']
+[INFO][2023-10-20 15:35:24,092][reuseCommonTestCases_service.py:95]--待复制的控件: 查询报表 ['Cognos报表']
+[INFO][2023-10-20 15:35:30,817][reuseCommonTestCases_service.py:90]--功能名称+数据等级:资金账余额变动查询_深（Ⅰ级）
+[INFO][2023-10-20 15:35:30,818][reuseCommonTestCases_service.py:95]--待复制的控件: 查询时段 ['查询日期']
+[INFO][2023-10-20 15:35:30,818][reuseCommonTestCases_service.py:95]--待复制的控件: 多项输入框 ['资金明细账号', '结算参与人代号', '结算参与人名称']
+[INFO][2023-10-20 15:35:30,819][reuseCommonTestCases_service.py:95]--待复制的控件: 查询按钮 ['查询']
+[INFO][2023-10-20 15:35:30,819][reuseCommonTestCases_service.py:95]--待复制的控件: 重置按钮 ['重置']
+[INFO][2023-10-20 15:35:30,819][reuseCommonTestCases_service.py:95]--待复制的控件: 查询报表 ['Cognos报表']
+[INFO][2023-10-20 16:00:42,480][reuseCommonTestCases_service.py:74]--要合并测试点: 前端功能页面
+[INFO][2023-10-20 16:00:42,481][reuseCommonTestCases_service.py:90]--功能名称+数据等级:结算信息汇总查询-沪（Ⅰ级）
+[INFO][2023-10-20 16:00:42,481][reuseCommonTestCases_service.py:95]--待复制的控件: 查询时段 ['清算日期']
+[INFO][2023-10-20 16:00:42,481][reuseCommonTestCases_service.py:95]--待复制的控件: 单项输入框 ['挂牌年份']
+[INFO][2023-10-20 16:00:42,481][reuseCommonTestCases_service.py:95]--待复制的控件: 左右互选框 ['交收会员', '结果代码', '结算单元', '证券账户', '证券代码Ⅰ', '资金账号']
+[INFO][2023-10-20 16:00:42,482][reuseCommonTestCases_service.py:95]--待复制的控件: 多项选择框 ['记录类型', '交收方式', '交易方式', '清算标志', '市场代码', '业务类型']
+[INFO][2023-10-20 16:00:42,482][reuseCommonTestCases_service.py:95]--待复制的控件: 单选下拉列表 ['流通类型', '买卖标志', '权益类别', '账户性质', '证券类别']
+[INFO][2023-10-20 16:00:42,482][reuseCommonTestCases_service.py:95]--待复制的控件: 查询按钮 ['查询']
+[INFO][2023-10-20 16:00:42,482][reuseCommonTestCases_service.py:95]--待复制的控件: 重置按钮 ['重置']
+[INFO][2023-10-20 16:00:42,483][reuseCommonTestCases_service.py:95]--待复制的控件: 查询报表 ['Cognos报表']
+[INFO][2023-10-20 16:00:49,173][reuseCommonTestCases_service.py:90]--功能名称+数据等级:资金账余额变动查询_深（Ⅰ级）
+[INFO][2023-10-20 16:00:49,173][reuseCommonTestCases_service.py:95]--待复制的控件: 查询时段 ['查询日期']
+[INFO][2023-10-20 16:00:49,174][reuseCommonTestCases_service.py:95]--待复制的控件: 多项输入框 ['资金明细账号', '结算参与人代号', '结算参与人名称']
+[INFO][2023-10-20 16:00:49,174][reuseCommonTestCases_service.py:95]--待复制的控件: 查询按钮 ['查询']
+[INFO][2023-10-20 16:00:49,174][reuseCommonTestCases_service.py:95]--待复制的控件: 重置按钮 ['重置']
+[INFO][2023-10-20 16:00:49,174][reuseCommonTestCases_service.py:95]--待复制的控件: 查询报表 ['Cognos报表']
+[INFO][2023-10-20 17:25:46,677][config_service.py:60]--{'config_file_name': '文档验证&环境部署.xlsx', 'config_file_path': '文档验证&环境部署.xlsx'}
+[INFO][2023-10-20 19:34:20,130][config_service.py:60]--{'config_file_name': '前端功能页面.xlsx', 'config_file_path': '前端功能页面.xlsx'}
+[INFO][2023-10-20 19:38:36,934][config_service.py:60]--{'config_file_name': '前端功能页面.xlsx', 'config_file_path': '前端功能页面.xlsx'}
+[INFO][2023-10-20 19:40:40,067][config_service.py:60]--{'config_file_name': '前端功能页面-20231020.xlsx', 'config_file_path': '前端功能页面-20231020.xlsx'}
+[INFO][2023-10-20 19:46:10,713][config_service.py:60]--{'config_file_name': '模板-软件测试-{项目编号} - 副本 - 副本 - 副本.xlsx', 'config_file_path': '模板-软件测试-{项目编号} - 副本 - 副本 - 副本.xlsx'}
+[INFO][2023-10-20 19:47:59,670][config_service.py:60]--{'config_file_name': '模板-软件测试-{项目编号} - 副本 - 副本 - 副本.xlsx', 'config_file_path': '模板-软件测试-{项目编号} - 副本 - 副本 - 副本.xlsx'}
+[INFO][2023-10-20 19:51:30,428][config_service.py:60]--{'config_file_name': '模板-软件测试-{项目编号} - 副本.xlsx', 'config_file_path': '模板-软件测试-{项目编号} - 副本.xlsx'}

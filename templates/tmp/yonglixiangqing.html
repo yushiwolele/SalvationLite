@@ -1,0 +1,331 @@
+{% extends "layouts/base.html" %}
+{% load project_extras static %}
+{% block title %} 用例列表 {% endblock %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+<script>
+    function subpro() {
+        var prolist = document.getElementById('prolist')
+        prolist.style.display = "none";
+        var subprojects = document.getElementById('subprojects')
+        subprojects.style.display = "block";
+    }
+    function zhengchang() {
+        var allpros = document.getElementById('allpros');
+        allpros.style.display = "none";
+        var donepros = document.getElementById('donepros');
+        donepros.style.display = "none";
+        var normalpros = document.getElementById('normalpros');
+        normalpros.style.display = "block";
+
+        var threeitem = document.getElementById('threeitem');
+        threeitem.style.display = "none";
+        var twoitem = document.getElementById('twoitem');
+        twoitem.style.display = "block";
+        var oneitem = document.getElementById('oneitem');
+        oneitem.style.display = "none";
+
+    }
+    function jiexiang() {
+        var allpros = document.getElementById('allpros');
+        allpros.style.display = "none";
+        var donepros = document.getElementById('donepros');
+        donepros.style.display = "block";
+        var normalpros = document.getElementById('normalpros');
+        normalpros.style.display = "none";
+        var threeitem = document.getElementById('threeitem');
+        threeitem.style.display = "none";
+        var twoitem = document.getElementById('twoitem');
+        twoitem.style.display = "none";
+        var oneitem = document.getElementById('oneitem');
+        oneitem.style.display = "block";
+
+    }
+    function fuji() {
+        var prolist = document.getElementById('prolist');
+        prolist.style.display = "block";
+        var allpros = document.getElementById('allpros');
+        allpros.style.display = "block";
+        var donepros = document.getElementById('donepros');
+        donepros.style.display = "none";
+        var normalpros = document.getElementById('normalpros');
+        normalpros.style.display = "none";
+        var subprojects = document.getElementById('subprojects');
+        subprojects.style.display = "none";
+
+    }
+</script>
+    <div class="pcoded-content">
+        <div class="pcoded-inner-content">
+            <div class="page-header">
+                <div class="page-block">
+                    <div class="row align-items-center">
+                        <div class="col-md-12">
+                            <div class="page-header-title">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- [ breadcrumb ] end -->
+            <div class="main-body">
+                <div class="page-wrapper">
+                    <!-- [ Main Content ] start -->
+                    <div class="row">
+                        <!-- [ basic-table ] start -->
+                        <div class="col-xl-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5><span><i class="feather icon-home">  <a
+                                            href="{% url 'index' %}">首页</a></i></span>
+                                    </h5>
+                                    <span><i class="fa fa-map-marker"></i> 用例列表</span>
+                                </div>
+
+                                <div id= 'prolist' style="display: block" class="card-block">
+                                    <div class='row'>
+                                        <div class="col-8">
+                                            <div class="col-6">
+                                                <div class="btn-group ">
+                                                        <button id='zhuangtai' class="btn btn-light" type="button"
+                                                                 aria-haspopup="true"
+                                                                aria-expanded="false" style="display: block">用例列表
+                                                        </button>
+                                                </div>
+                                                <div class="btn-group ">
+                                                    <a href="{% url 'shengchengyongli' %}"
+                                                      class='btn btn-primary' style="color: #fdfdfe">生成用例</a>
+                                                </div>
+                                                <div class="btn-group ">
+                                                    <a onclick="document.getElementById('file').click();"
+                                                      class='btn btn-primary' style="color: #fdfdfe">导入用例</a>
+                                                </div>
+                                                <input type="file" name="file" id="file" style="display: none;">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-4">
+                                            <form class="form-inline mb-2">
+                                                <div class="form-group mx-sm-3 mb-2">
+                                                    <input type="text"
+                                                           class="form-control"
+                                                           name="search" ,
+                                                           id='search' ,
+                                                           placeholder="项目名称/功能模块名称" ,
+                                                           value=>
+                                                </div>
+                                                <button type="submit" class="btn btn-secondary mb-2 btn-sm">搜索</button>
+                                            </form>
+                                        </div>
+
+
+                                    </div>
+
+                                    <!--所有项目-->
+                                    <div id='allpros' style="display: block" class="table-responsive ">
+                                        <table class="table table-striped">
+                                            <thead>
+                                            <tr>
+                                                <th>id</th>
+                                                <th>隶属项目</th>
+                                                <th>用例编号</th>
+                                                <th>功能模块</th>
+                                                <th>用例属性</th>
+                                                <th>重要级别</th>
+                                                <th>子模块</th>
+                                                <th>设计分类</th>
+                                                <th>测试用例</th>
+                                                <th>前置条件</th>
+                                                <th>执行步骤</th>
+                                                <th>预期结果</th>
+                                                <th>用例执行方式</th>
+                                                <th>执行结果</th>
+                                                <th>测试结果</th>
+                                                <th>执行日期</th>
+                                                <th>执行人</th>
+                                                <th>是否造数</th>
+                                                <th>造数要求</th>
+                                                <th>缺陷关联</th>
+                                                <th>备注</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">1</th>
+                                                    <td contenteditable='true'>EDW2022007-P8-风险维度功能迁移</td> <!--隶属项目-->
+                                                    <td contenteditable='true'>QDGN7-001</td> <!--用例编号-->
+                                                    <td contenteditable='true'>一般监测-兑付期低于1年的低评级质押券入库量（Ⅰ级）</td> <!--功能模块-->
+                                                    <td contenteditable='true'>正</td> <!--用例属性-->
+                                                    <td style="color: #ff0800">高</td><!--重要级别-->
+                                                    <td>流程类</td><!--子模块-->
+                                                    <td>流程检查</td> <!--设计分类-->
+                                                    <td>检查功能基本流程-时间点</td>  <!--测试用例-->
+                                                    <td contenteditable='true'>1、使用FireFox/谷歌登录内部用户管理平台，点击统一风险监测系统，进入风险维度-日频度-市场-担保品管理->
+                                                        一般监测-兑付期低于1年的低评级质押券入库量（Ⅰ级）</td><!--前置条件-->
+                                                    <td contenteditable='true'>1、查询类型选择时间点，日期控件输入日期，市场类别选择全市场
+                                                        2、点击查询，查询结果是否乱码
+                                                        3、点击下载按钮，查看是否下载成功
+                                                        4、点击页面指标详情
+                                                    </td><!--执行步骤-->
+                                                    <td contenteditable='true'>1、条件输入成功
+                                                        2、查询成功，页面无乱码
+                                                        3、下载成功
+                                                        4、弹出详情页信息报表
+                                                    </td>  <!--预期结果-->
+                                                    <td>自动化</td> <!--用例执行方式-->
+                                                    <td></td> <!--执行结果-->
+                                                    <td></td> <!--测试结果-->
+                                                    <td></td> <!--执行日期-->
+                                                    <td></td> <!--执行人-->
+                                                    <td></td> <!--是否造数-->
+                                                    <td></td> <!--造数要求-->
+                                                    <td></td> <!--缺陷关联-->
+                                                    <td></td> <!--备注-->
+                                                </tr>
+
+                                            <tr>
+                                                    <th scope="row">2</th>
+                                                    <td>EDW2022007-P8-风险维度功能迁移</td> <!--隶属项目-->
+                                                    <td>QDGN7-002</td> <!--用例编号-->
+                                                    <td>一般监测-兑付期低于1年的低评级质押券入库量（Ⅰ级）</td> <!--功能模块-->
+                                                    <td>正</td> <!--用例属性-->
+                                                    <td>低</td><!--重要级别-->
+                                                    <td>流程类</td><!--子模块-->
+                                                    <td>流程检查</td> <!--设计分类-->
+                                                    <td>检查功能基本流程-时间点</td>  <!--测试用例-->
+                                                    <td>1、使用FireFox/谷歌登录内部用户管理平台，点击统一风险监测系统，进入风险维度-日频度-市场-担保品管理->
+                                                        一般监测-兑付期低于1年的低评级质押券入库量（Ⅰ级）</td><!--前置条件-->
+                                                    <td>1、查询类型选择时间点，日期控件输入日期，市场类别选择全市场
+                                                        2、点击查询，查询结果是否乱码
+                                                        3、点击下载按钮，查看是否下载成功
+                                                        4、点击页面指标详情
+                                                    </td><!--执行步骤-->
+                                                    <td>1、条件输入成功
+                                                        2、查询成功，页面无乱码
+                                                        3、下载成功
+                                                        4、弹出详情页信息报表
+                                                    </td>  <!--预期结果-->
+                                                    <td>自动化</td> <!--用例执行方式-->
+                                                    <td></td> <!--执行结果-->
+                                                    <td></td> <!--测试结果-->
+                                                    <td></td> <!--执行日期-->
+                                                    <td></td> <!--执行人-->
+                                                    <td></td> <!--是否造数-->
+                                                    <td></td> <!--造数要求-->
+                                                    <td></td> <!--缺陷关联-->
+                                                    <td></td> <!--备注-->
+                                                </tr>
+
+                                            <tr>
+                                                    <th scope="row">3</th>
+                                                    <td>EDW2022007-P8-风险维度功能迁移</td> <!--隶属项目-->
+                                                    <td>QDGN7-003</td> <!--用例编号-->
+                                                    <td>一般监测-兑付期低于1年的低评级质押券入库量（Ⅰ级）</td> <!--功能模块-->
+                                                    <td>正</td> <!--用例属性-->
+                                                    <td >低</td><!--重要级别-->
+                                                    <td>流程类</td><!--子模块-->
+                                                    <td>流程检查</td> <!--设计分类-->
+                                                    <td>检查功能基本流程-时间点</td>  <!--测试用例-->
+                                                    <td>1、使用FireFox/谷歌登录内部用户管理平台，点击统一风险监测系统，进入风险维度-日频度-市场-担保品管理->
+                                                        一般监测-兑付期低于1年的低评级质押券入库量（Ⅰ级）</td><!--前置条件-->
+                                                    <td>1、查询类型选择时间点，日期控件输入日期，市场类别选择全市场
+                                                        2、点击查询，查询结果是否乱码
+                                                        3、点击下载按钮，查看是否下载成功
+                                                        4、点击页面指标详情
+                                                    </td><!--执行步骤-->
+                                                    <td>1、条件输入成功
+                                                        2、查询成功，页面无乱码
+                                                        3、下载成功
+                                                        4、弹出详情页信息报表
+                                                    </td>  <!--预期结果-->
+                                                    <td>自动化</td> <!--用例执行方式-->
+                                                    <td></td> <!--执行结果-->
+                                                    <td></td> <!--测试结果-->
+                                                    <td></td> <!--执行日期-->
+                                                    <td></td> <!--执行人-->
+                                                    <td></td> <!--是否造数-->
+                                                    <td></td> <!--造数要求-->
+                                                    <td></td> <!--缺陷关联-->
+                                                    <td></td> <!--备注-->
+                                                </tr>
+
+                                            <tr>
+                                                    <th scope="row">4</th>
+                                                    <td>EDW2022007-P8-风险维度功能迁移</td> <!--隶属项目-->
+                                                    <td>QDGN8-101</td> <!--用例编号-->
+                                                    <td>一般统计-年换手率（Ⅰ级别）</td> <!--功能模块-->
+                                                    <td>正</td> <!--用例属性-->
+                                                    <td style="color: #ff0800">高</td><!--重要级别-->
+                                                    <td>java报表数据检查</td><!--子模块-->
+                                                    <td>深圳市场-时间段数据检查</td> <!--设计分类-->
+                                                    <td>同一查询条件下TD、高斯的前端查询html报表样式、数据对比检查</td>  <!--测试用例-->
+                                                    <td>1、登录内部用户管理平台，点击统一风险监测系统，进入风险维度，进入日频度-参与人->
+                                                        结算纪律遵守->一般统计-年换手率（Ⅰ级）
+                                                        2、查询类型选择时间段，日期空间输入日期，市场类别选择深
+                                                        3、点击查询，查询结果是否是乱码
+                                                        4、点击导出并保存
+                                                    </td><!--前置条件-->
+
+                                                    <td>1、登录内部用户管理平台，点击统一风险监测系统，进入风险维度，进入日频度-参与人->
+                                                        结算纪律遵守->一般统计-年换手率（Ⅰ级）
+                                                        2、查询类型选择时间段，日期空间输入日期，市场类别选择深（与迁移功能前输入条件一致）
+                                                        3、点击查询，查询结果是否是乱码
+                                                        4、点击导出并保存
+                                                        5、将同一查询条件下TD、、高斯导出文件进行对比，查看数据是否一致
+                                                    </td><!--执行步骤-->
+                                                    <td>1、登录并进入功能
+                                                        2、条件输入成功
+                                                        3、查询成功，页面无乱码
+                                                        4、导出并保存成功
+                                                        5、同一查询条件下TD、高斯数据一致
+                                                    </td>  <!--预期结果-->
+                                                    <td>手工</td> <!--用例执行方式-->
+                                                    <td></td> <!--执行结果-->
+                                                    <td></td> <!--测试结果-->
+                                                    <td></td> <!--执行日期-->
+                                                    <td></td> <!--执行人-->
+                                                    <td></td> <!--是否造数-->
+                                                    <td></td> <!--造数要求-->
+                                                    <td></td> <!--缺陷关联-->
+                                                    <td></td> <!--备注-->
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+
+                                    <div class="row">
+                                        <div id='threeitem' style="display: block" class='col-4'>
+                                            <a>合计5条</a>
+                                        </div>
+                                        <div id='twoitem' style="display: none" class='col-4'>
+                                            <a>合计2条</a>
+                                        </div>
+                                        <div id='oneitem' style="display: none" class='col-4'>
+                                            <a>合计1条</a>
+                                        </div>
+{#                                        <div class='col-8'>#}
+{#                                            {% show_pagination %}#}
+{#                                        </div>#}
+                                        <div class='col-8'>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+{% endblock javascripts %}

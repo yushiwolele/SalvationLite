@@ -1,0 +1,244 @@
+{% extends "layouts/base.html" %}
+{% load project_extras static %}
+{% block title %} 列表 {% endblock %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+<script>
+    function subpro() {
+        var prolist = document.getElementById('prolist')
+        prolist.style.display = "none";
+        var subprojects = document.getElementById('subprojects')
+        subprojects.style.display = "block";
+    }
+    function zhengchang() {
+        var allpros = document.getElementById('allpros');
+        allpros.style.display = "none";
+        var donepros = document.getElementById('donepros');
+        donepros.style.display = "none";
+        var normalpros = document.getElementById('normalpros');
+        normalpros.style.display = "block";
+
+        var threeitem = document.getElementById('threeitem');
+        threeitem.style.display = "none";
+        var twoitem = document.getElementById('twoitem');
+        twoitem.style.display = "block";
+        var oneitem = document.getElementById('oneitem');
+        oneitem.style.display = "none";
+
+    }
+    function jiexiang() {
+        var allpros = document.getElementById('allpros');
+        allpros.style.display = "none";
+        var donepros = document.getElementById('donepros');
+        donepros.style.display = "block";
+        var normalpros = document.getElementById('normalpros');
+        normalpros.style.display = "none";
+        var threeitem = document.getElementById('threeitem');
+        threeitem.style.display = "none";
+        var twoitem = document.getElementById('twoitem');
+        twoitem.style.display = "none";
+        var oneitem = document.getElementById('oneitem');
+        oneitem.style.display = "block";
+
+    }
+    function fuji() {
+        var prolist = document.getElementById('prolist');
+        prolist.style.display = "block";
+        var allpros = document.getElementById('allpros');
+        allpros.style.display = "block";
+        var donepros = document.getElementById('donepros');
+        donepros.style.display = "none";
+        var normalpros = document.getElementById('normalpros');
+        normalpros.style.display = "none";
+        var subprojects = document.getElementById('subprojects');
+        subprojects.style.display = "none";
+
+    }
+</script>
+    <div class="pcoded-content">
+        <div class="pcoded-inner-content">
+            <div class="page-header">
+                <div class="page-block">
+                    <div class="row align-items-center">
+                        <div class="col-md-12">
+                            <div class="page-header-title">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- [ breadcrumb ] end -->
+            <div class="main-body">
+                <div class="page-wrapper">
+                    <!-- [ Main Content ] start -->
+                    <div class="row">
+                        <!-- [ basic-table ] start -->
+                        <div class="col-xl-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5><span><i class="feather icon-home">  <a
+                                            href="{% url 'index' %}">首页</a></i></span>
+                                    </h5>
+                                    <span><i class="fa fa-map-marker"></i> 用例模板列表</span>
+                                </div>
+
+                                <div id= 'prolist' style="display: block" class="card-block">
+                                    <div class='row'>
+                                        <div class="col-8">
+                                            <div class="col-6">
+                                                <div class="btn-group ">
+                                                        <button id='zhuangtai' class="btn btn-light dropdown-toggle" type="button"
+                                                                data-toggle="dropdown" aria-haspopup="true"
+                                                                aria-expanded="false" style="display: block">用例模板
+                                                        </button>
+
+                                                    <div class="dropdown-menu">
+                                                        <a id='zhengchang' class="dropdown-item"
+                                                           onclick="zhengchang()">界面基本功能</a>
+                                                        <a class="dropdown-item"
+                                                           onclick="jiexiang()">查询时点</a>
+                                                        <a class="dropdown-item"
+                                                           onclick="">查询时段</a>
+                                                        <a class="dropdown-item"
+                                                           onclick="">单选输入框</a>
+                                                        <a class="dropdown-item"
+                                                           onclick="">多选下拉列表</a>
+                                                        <a class="dropdown-item"
+                                                           onclick="">重置按钮</a>
+                                                        <a class="dropdown-item"
+                                                           onclick="">自定义表单</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-4">
+                                            <form class="form-inline mb-2">
+                                                <div class="form-group mx-sm-3 mb-2">
+                                                    <input type="text"
+                                                           class="form-control"
+                                                           name="search" ,
+                                                           id='search' ,
+                                                           placeholder="模板名称" ,
+                                                           value=>
+                                                </div>
+                                                <button type="submit" class="btn btn-secondary mb-2 btn-sm">搜索</button>
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                    <!--所有项目-->
+                                    <div id='allpros' style="display: block" class="table-responsive ">
+                                        <table class="table table-striped">
+                                            <thead>
+                                            <tr>
+                                                <th>id</th>
+                                                <th>模板名称</th>
+                                                <th>用例属性</th>
+                                                <th>重要级别</th>
+                                                <th>子模块</th>
+                                                <th>设计分类</th>
+                                                <th>测试用例</th>
+                                                <th>预期结果</th>
+                                                <th>用例执行方式</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">1</th>
+                                                    <td>界面基本功能</td>
+                                                    <td>正</td>
+                                                    <td>低</td>
+                                                    <td>界面基本功能</td>
+                                                    <td>功能路径检查</td>
+                                                    <td>检查功能所在的层级目录</td>
+                                                    <td></td>
+                                                    <td>自动化</td>
+                                                </tr>
+
+                                                <tr>
+                                                    <th scope="row">2</th>
+                                                    <td>界面基本功能</td>
+                                                    <td>正</td>
+                                                    <td>低</td>
+                                                    <td>界面基本功能</td>
+                                                    <td>功能路径检查</td>
+                                                    <td>检查功能名称及数据等级</td>
+                                                    <td></td>
+                                                    <td>自动化</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">3</th>
+                                                    <td>界面基本功能</td>
+                                                    <td>正</td>
+                                                    <td>低</td>
+                                                    <td>界面基本功能</td>
+                                                    <td>功能预览图检查</td>
+                                                    <td>检查功能的功能预览图是否显示正确</td>
+                                                    <td></td>
+                                                    <td>手工</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">4</th>
+                                                    <td>查询时段</td>
+                                                    <td>正</td>
+                                                    <td>低</td>
+                                                    <td></td>
+                                                    <td>控件信息检查</td>
+                                                    <td>名称检验</td>
+                                                    <td></td>
+                                                    <td>自动化</td>
+                                                </tr>
+
+
+                                                <tr>
+                                                    <th scope="row">5</th>
+                                                    <td>查询按钮</td>
+                                                    <td>正</td>
+                                                    <td>低</td>
+                                                    <td></td>
+                                                    <td>正常触发</td> <!--设计分类-->
+                                                    <td>当输入框中有数据时</td>
+                                                    <td>当所有输入中都有数据时，可成功查询出所有数据</td>
+                                                    <td>手工</td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+
+                                    <div class="row">
+                                        <div id='threeitem' style="display: block" class='col-4'>
+                                            <a>合计5条</a>
+                                        </div>
+                                        <div id='twoitem' style="display: none" class='col-4'>
+                                            <a>合计2条</a>
+                                        </div>
+                                        <div id='oneitem' style="display: none" class='col-4'>
+                                            <a>合计1条</a>
+                                        </div>
+{#                                        <div class='col-8'>#}
+{#                                            {% show_pagination %}#}
+{#                                        </div>#}
+                                        <div class='col-8'>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+{% endblock javascripts %}

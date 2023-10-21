@@ -1,0 +1,268 @@
+{% extends "layouts/base.html" %}
+{% load project_extras static %}
+{% block title %}  {% endblock %}
+{% load  static crispy_forms_tags %}
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+<script>
+    function addzidingyibianliang() {
+        var zidingyibianlianglist1 = document.getElementById('zidingyibianlianglist1');
+        zidingyibianlianglist1.style.display = "none";
+        var zidingyibianlianglist2 = document.getElementById('zidingyibianlianglist2');
+        zidingyibianlianglist2.style.display = "none";
+        var zidingyibianliangadd = document.getElementById('zidingyibianliangadd');
+        zidingyibianliangadd.style.display = "block";
+    }
+    function add() {
+        var zidingyibianlianglist1 = document.getElementById('zidingyibianlianglist1');
+        zidingyibianlianglist1.style.display = "none";
+        var zidingyibianliangadd = document.getElementById('zidingyibianliangadd');
+        zidingyibianliangadd.style.display = "none";
+        var zidingyibianlianglist2 = document.getElementById('zidingyibianlianglist2');
+        zidingyibianlianglist2.style.display = "block";
+    }
+    function fengxianweidu1() {
+        var ripindu = document.getElementById('ripindu');
+        ripindu.style.display = "block";
+    }
+    function ripindu() {
+        var jiesuanjilv = document.getElementById('jiesuanjilv');
+        jiesuanjilv.style.display = "block";
+    }
+    function jiesuan() {
+        var jianguanjiance = document.getElementById('jianguanjiance');
+        jianguanjiance.style.display = "block";
+    }
+    function jianguan() {
+        var gongnengul = document.getElementById('gongnengul');
+        gongnengul.style.display = "none";
+        var gongneng = document.getElementById('gongneng');
+        gongneng.style.display = "block";
+        var table1 = document.getElementById('table1');
+        table1.style.display = "none";
+        var table2 = document.getElementById('table2');
+        table2.style.display = "block";
+
+    }
+</script>
+    <div class="pcoded-content">
+        <div class="pcoded-inner-content">
+            <div class="page-header">
+                <div class="page-block">
+                    <div class="row align-items-center">
+                        <div class="col-md-12">
+                            <div class="page-header-title">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- [ breadcrumb ] end -->
+            <div class="main-body">
+                <div class="page-wrapper">
+                    <!-- [ Main Content ] start -->
+                    <div class="row">
+                        <!-- [ basic-table ] start -->
+                        <div class="col-xl-12">
+
+                            <div id='zidingyibianliangadd' style="display: block" class="card">
+                                <div class="card-header">
+                                    <h5 class="m-b-10">
+                                        <span><i class="feather icon-box">  <a href="{% url 'devlist' %}">用例列表</a></i></span>
+                                    </h5>
+                                    <span><i class="fa fa-map-marker"></i> 生成用例</span>
+                                </div>
+                                <div class="card-block table-border-style">
+                                    <form method="post" enctype="multipart/form-data">
+                                        隶属项目<br/>
+                                        <select style="width: 1200px; height: 38px;
+                                        margin-top: 10px;background-color: rgba(233,236,238,0.41);border: 1px solid rgba(89,89,89,0.47);border-radius: 3px;">
+                                             <option value="volvo">EDW2021017-EDW门户上海信息披露义务人查询结果加盖电子凭证及新增发送上海PROP接口功能</option>
+                                             <option value="saab">EDW2021112-异常账户监测系统三期建设</option>
+                                             <option value="opel">EDW2022007-公司大数据平台建设项目（三期）统一风险监测系统迁移项目-EDW2022007-P8-风险维度功能迁移</option>
+                                        </select>
+{#                                        <input type="text"  value="" style="width: 1200px; height: 38px;#}
+{#                                        margin-top: 10px;background-color: rgba(233,236,238,0.41);border: 1px solid rgba(89,89,89,0.47);border-radius: 3px;"#}
+{#                                               maxlength=""/>#}
+                                        <br/>
+                                        功能模块*<br/>
+                                        <ul id="gongnengul" style="display: block">
+                                            <li class="nav-item pcoded-hasmenu ">
+                                                <a><span class="pcoded-mtext" onclick="fengxianweidu1()">风险维度
+                                                    <ul id='ripindu' class="pcoded-submenu" style="display: none">
+                                                        <li class=""><a onclick="ripindu()">日频度-参数人
+                                                            <ul id='jiesuanjilv' style="display: none">
+                                                                <li onclick="jiesuan()">结算纪律遵守
+                                                                    <ul id='jianguanjiance' style="display: none">
+                                                                        <li onclick="jianguan()">监管监测-报价回购连续失败天数</li>
+                                                                        <li>监管监测-备付金透支金额</li>
+                                                                        <li>一般监测-大宗交易T+0预交收不足限制撤销指定交易账户个次</li>
+                                                                    </ul>
+                                                                </li>
+                                                                <li>货币基金业务</li>
+                                                                <li>债券业务</li>
+                                                            </ul>
+                                                        </a></li>
+                                                        <li class=""><a>月频度-参数人</a></li>
+                                                        <li class=""><a>月频度-市场</a></li>
+                                                        <li class=""><a>月频度-市场</a></li>
+                                                    </ul>
+                                                </span></a>
+                                            </li>
+                                            <li class=""><a class="">股债联动</a></li>
+
+                                        </ul>
+                                        <input id='gongneng' type="text"  value="监管监测-报价回购连续失败天数;监管监测-备付金透支金额" style="width: 1200px; height: 38px;display: none;
+                                        margin-top: 10px;background-color: rgba(233,236,238,0.41);border: 1px solid rgba(89,89,89,0.47);border-radius: 3px;"
+                                               maxlength=""/>
+
+{#                                        <select style="width: 1200px; height: 38px;#}
+{#                                        margin-top: 10px;background-color: rgba(233,236,238,0.41);border: 1px solid rgba(89,89,89,0.47);border-radius: 3px;">#}
+{#                                             <option value="volvo">风险维度#}
+{#                                                <select>#}
+{#                                                    <option>日频度-参数人#}
+{#                                                        <select>#}
+{#                                                            <option>结算纪律遵守#}
+{#                                                                <select>#}
+{#                                                                    <option>监管监测-报价回购连续失败天数</option>#}
+{#                                                                    <option>监管监测-备付金透支金额</option>#}
+{#                                                                    <option>一般监测-大宗交易T+0预交收不足限制撤销指定交易账户个次</option>#}
+{#                                                                </select>#}
+{#                                                            </option>#}
+{#                                                            <option>货币基金业务</option>#}
+{#                                                            <option>债券业务</option>#}
+{#                                                        </select>#}
+{##}
+{#                                                    </option>#}
+{#                                                    <option>月频度-参数人</option>#}
+{#                                                    <option>月频度-市场</option>#}
+{#                                                    <option>日频度-市场</option>#}
+{#                                                </select>#}
+{#                                             </option>#}
+{#                                             <option value="saab">EDW2021112-异常账户监测系统三期建设</option>#}
+{#                                             <option value="opel">EDW2022007-公司大数据平台建设项目（三期）统一风险监测系统迁移项目</option>#}
+{#                                        </select>#}
+                                        <br/>
+                                        页面控件
+                                        <br/>
+                                        <div id='allpros' class="table-responsive ">
+                                            <table id='table1' style="display: block" class="table table-striped">
+                                                <thead>
+                                                <tr>
+                                                    <th>一级目录</th>
+                                                    <th>二级目录</th>
+                                                    <th>三级目录</th>
+                                                    <th>四级目录</th>
+                                                    <th>功能模块</th>
+                                                    <th>查询时点</th>
+                                                    <th>查询时段</th>
+                                                    <th>单项输入框</th>
+                                                    <th>多项输入框</th>
+                                                    <th>左右互选框</th>
+                                                    <th>单选下拉列表</th>
+                                                    <th>查询按钮</th>
+                                                    <th>重置按钮</th>
+                                                    <th>上传导入</th>
+                                                    <th>其他按钮</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr>
+                                                    <th scope="row"></th>
+                                                    <td contenteditable='true'></td>
+                                                    <td contenteditable='true'></td>
+                                                    <td contenteditable='true'></td>
+                                                    <td contenteditable='true'></td>
+                                                    <td contenteditable='true'></td>
+                                                    <td contenteditable='true'></td>
+                                                    <td contenteditable='true'></td>
+                                                    <td contenteditable='true'></td>
+                                                    <td contenteditable='true'></td>
+                                                    <td contenteditable='true'></td>
+                                                    <td contenteditable='true'></td>
+                                                    <td contenteditable='true'></td>
+                                                    <td contenteditable='true'></td>
+                                                    <td contenteditable='true'></td>
+                                                </tr>
+                                             </tbody>
+                                            </table>
+                                        <table id='table2' style="display: none" class="table table-striped">
+                                            <thead>
+                                            <tr>
+                                                <th>一级目录</th>
+                                                <th>二级目录</th>
+                                                <th>三级目录</th>
+                                                <th>四级目录</th>
+                                                <th>功能模块</th>
+                                                <th>查询时点</th>
+                                                <th>查询时段</th>
+                                                <th>单项输入框</th>
+                                                <th>多项输入框</th>
+                                                <th>左右互选框</th>
+                                                <th>单选下拉列表</th>
+                                                <th>查询按钮</th>
+                                                <th>重置按钮</th>
+                                                <th>上传导入</th>
+                                                <th>其他按钮</th>
+                                            </tr>
+                                            </thead>
+                                             <tbody>
+                                                <tr>
+                                                    <th scope="row">统一风险监测系统</th>
+                                                    <td contenteditable='true'>风险维度</td>
+                                                    <td contenteditable='true'>日频度参与人</td>
+                                                    <td contenteditable='true'>结算纪律遵守</td>
+                                                    <td contenteditable='true'>监管监测-报价回购连续失败天数</td>
+                                                    <td contenteditable='true'></td>
+                                                    <td contenteditable='true'></td>
+                                                    <td contenteditable='true'></td>
+                                                    <td contenteditable='true'></td>
+                                                    <td contenteditable='true'></td>
+                                                    <td contenteditable='true'></td>
+                                                    <td contenteditable='true'></td>
+                                                    <td contenteditable='true'></td>
+                                                    <td contenteditable='true'></td>
+                                                    <td contenteditable='true'></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">统一风险监测系统</th>
+                                                    <td contenteditable='true'>风险维度</td>
+                                                    <td contenteditable='true'>日频度参与人</td>
+                                                    <td contenteditable='true'>结算纪律遵守</td>
+                                                    <td contenteditable='true'>监管监测-备付金透支金额</td>
+                                                    <td contenteditable='true'></td>
+                                                    <td contenteditable='true'></td>
+                                                    <td contenteditable='true'></td>
+                                                    <td contenteditable='true'></td>
+                                                    <td contenteditable='true'></td>
+                                                    <td contenteditable='true'></td>
+                                                    <td contenteditable='true'></td>
+                                                    <td contenteditable='true'></td>
+                                                    <td contenteditable='true'></td>
+                                                    <td contenteditable='true'></td>
+                                                </tr>
+                                             </tbody>
+                                        </table>
+                                        </div>
+                                        <button type="button" class="btn btn-primary" onclick="window.location.href='{% url 'addyongli' %}';">新增</button>
+                                        <button type="button" class="btn btn-danger"
+                                                onclick="window.location.href='{% url 'devlist' %}';">取消
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+{% endblock javascripts %}

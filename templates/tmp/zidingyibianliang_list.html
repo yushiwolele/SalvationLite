@@ -1,0 +1,300 @@
+{% extends "layouts/base.html" %}
+{% load project_extras static %}
+{% block title %}  {% endblock %}
+{% load  static crispy_forms_tags %}
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+<script>
+    function addzidingyibianliang() {
+        var zidingyibianlianglist1 = document.getElementById('zidingyibianlianglist1');
+        zidingyibianlianglist1.style.display = "none";
+        var zidingyibianlianglist2 = document.getElementById('zidingyibianlianglist2');
+        zidingyibianlianglist2.style.display = "none";
+        var zidingyibianliangadd = document.getElementById('zidingyibianliangadd');
+        zidingyibianliangadd.style.display = "block";
+    }
+    function add() {
+        var zidingyibianlianglist1 = document.getElementById('zidingyibianlianglist1');
+        zidingyibianlianglist1.style.display = "none";
+        var zidingyibianliangadd = document.getElementById('zidingyibianliangadd');
+        zidingyibianliangadd.style.display = "none";
+        var zidingyibianlianglist2 = document.getElementById('zidingyibianlianglist2');
+        zidingyibianlianglist2.style.display = "block";
+    }
+
+</script>
+    <div class="pcoded-content">
+        <div class="pcoded-inner-content">
+            <div class="page-header">
+                <div class="page-block">
+                    <div class="row align-items-center">
+                        <div class="col-md-12">
+                            <div class="page-header-title">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- [ breadcrumb ] end -->
+            <div class="main-body">
+                <div class="page-wrapper">
+                    <!-- [ Main Content ] start -->
+                    <div class="row">
+                        <!-- [ basic-table ] start -->
+                        <div class="col-xl-12">
+                            <div id='zidingyibianlianglist1' style="display: block" class="card">
+                                <div class="card-header">
+                                    <h5><span><i class="feather icon-home">  <a
+                                            href="{% url 'index' %}">首页</a></i></span>
+                                    </h5>
+                                    <span><i class="fa fa-map-marker"></i> 变量列表</span>
+                                </div>
+
+                                <div class="card-block">
+                                    <div class='row'>
+                                        <div class="col-8">
+
+                                            <div class="col-6">
+
+
+{#                                                <div class="btn-group ">#}
+{#                                                    {% if created_by == '' %}#}
+{#                                                        <button class="btn btn-light dropdown-toggle" type="button"#}
+{#                                                                data-toggle="dropdown" aria-haspopup="true"#}
+{#                                                                aria-expanded="false">环境变量#}
+{#                                                        </button>#}
+{#                                                    {% else %}#}
+{#                                                        <button class="btn btn-light dropdown-toggle" type="button"#}
+{#                                                                data-toggle="dropdown" aria-haspopup="true"#}
+{#                                                                aria-expanded="false">{{ created_by }} </button>#}
+{#                                                    {% endif %}#}
+{#                                                    <div class="dropdown-menu">#}
+{##}
+{#                                                        <a class="dropdown-item"#}
+{#                                                           href="{% url 'prlist' %}?created_by={{ True }}&search={{ search }}">全局变量</a>#}
+{#                                                        <a class="dropdown-item"#}
+{#                                                           href="{% url 'prlist' %}?created_by={{ False }}&search={{ search }}">测试环境</a>#}
+{#                                                        <a class="dropdown-item"#}
+{#                                                           href="{% url 'prlist' %}?created_by={{ False }}&search={{ search }}">验证环境</a>#}
+{#                                                        <a class="dropdown-item"#}
+{#                                                           href="{% url 'prlist' %}?created_by={{ False }}&search={{ search }}">线上环境</a>#}
+{#                                                    </div>#}
+{#                                                </div>#}
+
+                                                <div class="btn-group ">
+                                                    <a class='btn btn-light'>自定义变量</a>
+                                                </div>
+
+{#                                                <div class="btn-group ">#}
+{#                                                    <a href="{% url 'dev_add' %}"#}
+{#                                                       class='btn btn-primary'>新增变量</a>#}
+{#                                                </div>#}
+                                                <div class="btn-group ">
+                                                    <a onclick="addzidingyibianliang()"
+                                                      class='btn btn-primary' style="color: #fdfdfe">新增变量</a>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                        <div class="col-4">
+                                            <form class="form-inline mb-2">
+                                                <div class="form-group mx-sm-3 mb-2">
+                                                    <input type="text"
+                                                           class="form-control"
+                                                           name="search" ,
+                                                           id='search' ,
+                                                           placeholder="变量名称" ,
+                                                           value=>
+                                                </div>
+                                                <button type="submit" class="btn btn-secondary mb-2 btn-sm">搜索</button>
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                    <div class="table-responsive ">
+                                        <table class="table table-striped">
+                                            <thead>
+                                            <tr>
+                                                <th>id</th>
+                                                <th>变量名称</th>
+                                                <th>当前值</th>
+                                                <th>变量描述</th>
+                                                <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;操作</th>
+                                            </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <td>1</td>
+                                                <td>变量1</td>
+                                                <td>变量1值</td>
+                                                <td>变量1描述</td>
+                                                <td>
+                                                    <button type="button" class="btn btn-success"
+                                                            onclick="">
+                                                        <i class="feather icon-edit"></i>更新
+                                                    </button>
+                                                    <button href="#" type="button" class="btn btn-danger"
+                                                            onclick="">
+                                                        <i class=" feather icon-trash-2"></i>删除
+                                                    </button>
+                                                </td>
+                                                </tr>
+                                            </tbody>
+
+                                        </table>
+                                    </div>
+                                    <div class="row">
+                                        <div class='col-4'>
+                                            <a>合计1条</a>
+                                        </div>
+                                        <div class='col-8'>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            <div id='zidingyibianliangadd' style="display: none" class="card">
+                                <div class="card-header">
+                                    <h5 class="m-b-10">
+                                        <span><i class="feather icon-box">  <a href="{% url 'devlist' %}">参数列表</a></i></span>
+                                    </h5>
+                                    <span><i class="fa fa-map-marker"></i> 新增参数</span>
+                                </div>
+                                <div class="card-block table-border-style">
+                                    <form method="post" enctype="multipart/form-data">
+                                        参数名称*<br/>
+                                        <input type="text"  value="" style="width: 1200px; height: 38px;
+                                        margin-top: 10px;background-color: rgba(233,236,238,0.41);border: 1px solid rgba(89,89,89,0.47);border-radius: 3px;"
+                                               maxlength=""/>
+                                        <br/>
+                                        参数值*<br/>
+                                        <input type="text"  value="" style="width: 1200px; height: 38px;
+                                        margin-top: 10px;background-color: rgba(233,236,238,0.41);border: 1px solid rgba(89,89,89,0.47);border-radius: 3px;"
+                                               maxlength=""/>
+                                        <br/>
+                                        参数描述<br/>
+                                        <input type="text"  value="" style="width: 1200px; height: 100px;
+                                        margin-top: 10px;margin-bottom:10px;background-color: rgba(233,236,238,0.41);border: 1px solid rgba(89,89,89,0.47);border-radius: 3px;"
+                                               maxlength=""/>
+                                        <br/>
+
+                                        <button type="button" class="btn btn-primary" onclick="add()">新增</button>
+                                        <button type="button" class="btn btn-danger"
+                                                onclick="window.location.href='{% url 'devlist' %}';">取消
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div id='zidingyibianlianglist2' style="display: none" class="card">
+                                <div class="card-header">
+                                    <h5><span><i class="feather icon-home">  <a
+                                            href="{% url 'index' %}">首页</a></i></span>
+                                    </h5>
+                                    <span><i class="fa fa-map-marker"></i> 变量列表</span>
+                                </div>
+
+                                <div class="card-block">
+                                    <div class='row'>
+                                        <div class="col-8">
+
+                                            <div class="col-6">
+                                                <div class="btn-group ">
+                                                    <a class='btn btn-light'>自定义变量</a>
+                                                </div>
+                                                <div class="btn-group ">
+                                                    <a onclick="addzidingyibianliang()"
+                                                      class='btn btn-primary' style="color: #fdfdfe">新增变量</a>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                        <div class="col-4">
+                                            <form class="form-inline mb-2">
+                                                <div class="form-group mx-sm-3 mb-2">
+                                                    <input type="text"
+                                                           class="form-control"
+                                                           name="search" ,
+                                                           id='search' ,
+                                                           placeholder="变量名称" ,
+                                                           value=>
+                                                </div>
+                                                <button type="submit" class="btn btn-secondary mb-2 btn-sm">搜索</button>
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                    <div class="table-responsive ">
+                                        <table class="table table-striped">
+                                            <thead>
+                                            <tr>
+                                                <th>id</th>
+                                                <th>变量名称</th>
+                                                <th>当前值</th>
+                                                <th>变量描述</th>
+                                                <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;操作</th>
+                                            </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <td>1</td>
+                                                <td>变量1</td>
+                                                <td>变量1值</td>
+                                                <td>变量1描述</td>
+                                                <td>
+                                                    <button type="button" class="btn btn-success"
+                                                            onclick="">
+                                                        <i class="feather icon-edit"></i>更新
+                                                    </button>
+                                                    <button href="#" type="button" class="btn btn-danger"
+                                                            onclick="">
+                                                        <i class=" feather icon-trash-2"></i>删除
+                                                    </button>
+                                                </td>
+                                                </tr>
+                                                <td>2</td>
+                                                <td>变量2</td>
+                                                <td>变量2值</td>
+                                                <td>变量2描述</td>
+                                                <td>
+                                                    <button type="button" class="btn btn-success"
+                                                            onclick="">
+                                                        <i class="feather icon-edit"></i>更新
+                                                    </button>
+                                                    <button href="#" type="button" class="btn btn-danger"
+                                                            onclick="">
+                                                        <i class=" feather icon-trash-2"></i>删除
+                                                    </button>
+                                                </td>
+                                                </tr>
+                                            </tbody>
+
+                                        </table>
+                                    </div>
+                                    <div class="row">
+                                        <div class='col-4'>
+                                            <a>合计2条</a>
+                                        </div>
+                                        <div class='col-8'>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+{% endblock javascripts %}

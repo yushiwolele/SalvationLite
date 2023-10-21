@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <!--引入 element-ui 的样式-->
+        <link rel="stylesheet" type="text/css" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+        <!-- 必须先引入vue  后使用element-ui -->
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+        <!-- 引入element 的组件库-->
+        <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+</head>
+<body>
+<doc>人员定位分站责任划分</doc>
+<template>
+  <div class="substation">
+    <div>
+      <el-form
+        :inline="true"
+        class="query-form"
+        ref="searchForm"
+        style="margin-left: 0.0781rem"
+        :model="searchForm"
+        @keyup.enter.native="refreshList()"
+        @submit.native.prevent
+      >
+        <el-form-item prop="areaStatus" label="区域状态">
+          <el-select size="small" v-model="searchForm.areaStatus" placeholder="请选择区域状态">
+            <el-option
+              v-for="item in areaStatusList"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value">
+            </el-option>
+          </el-select>
+        </el-form-item>
+        <el-form-item prop="responsibilityTeam" label="责任区队">
+          <el-select size="small" v-model="searchForm.responsibilityTeam" placeholder="请选择责任区队">
+            <el-option
+              v-for="item in responsibilityTeamList"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value">
+            </el-option>
+          </el-select>
+        </el-form-item>
+        <el-form-item>
+          <el-button type="primary" @click="refreshList()" size="mini">查询</el-button>
+          <el-button @click="resetSearch()" size="mini">重置</el-button>
+        </el-form-item>
+      </el-form>
+      <el-table
+        :data="dataList"
+        size="medium"
+        style="width: 100%"
+        border
+        v-loading="loading"
+        class="table"
+        :height="'3.9063rem'"
+        :row-key="tableRowKey"
+        :expand-row-keys="expandRowKeys"
+        @expand-change="tableExpandChange"
+        @row-click="rowClick"
+        :row-class-name="tableRowClassName"
+      >
+        <el-table-column type="expand">
+          <template slot-scope="scope">
+            <!-- 自定义编写 -->
+            <div class="expand-content">
+              <div>
+                <div>{{ scope.row.areaName }}</div>
+                <div>{{ scope.row.num }}</div>
+              </div>
+            </div>
+          </template>
+        </el-table-column>
+        <el-table-column
+          label="区域名称"
+          show-overflow-tooltip
+          prop="areaName">
+        </el-table-column>
+        <el-table-column
+          label="分站数量"
+          show-overflow-tooltip
+          prop="num">
+        </el-table-column>
+        <el-table-column
+          label="责任区队"
+          show-overflow-tooltip
+          prop="team">
+        </el-table-column>
+        <el-table-column
+          label="区队人数"
+          show-overflow-tooltip
+          prop="personTotal">
+          <template slot-scope="scope">
+            <el-link @click.native.stop="toDistrictTeam(scope.row)" type="primary">{{ scope.row.personTotal }}</el-link>
+          </template>
+        </el-table-column>
+        <el-table-column
+          label="短信通知人数"
+          show-overflow-tooltip
+          prop="noteTotal">
+          <template slot-scope="scope">
+            <el-link @click.native.stop="roSmsNotification(scope.row)" type="primary">{{ scope.row.noteTotal }}</el-link>
+          </template>
+        </el-table-column>
+        <el-table-column
+          header-align="center"
+          align="center"
+          width="200"
+          label="操作"
+        >
+          <template slot-scope="scope">
+            <el-button
+              type="text"
+              icon="el-icon-plus"
+              size="small"
+              @click.stop="add(scope.row)"
+              >新增</el-button
+            >
+            <el-button
+              type="text"
+              icon="el-icon-edit"
+              size="small"
+              @click.stop="edit(scope.row)"
+              >编辑</el-button
+            >
+            <el-button
+              type="text"
+              icon="el-icon-delete"
+              size="small"
+              @click.stop="del(scope.row)"
+              >删除</el-button
+            >
+          </template>
+        </el-table-column>
+      </el-table>
+    </div>
+  </div>
+</template>
+<script>
+export default {
+  data() {
+    return {
+      searchForm: {
+        areaStatus: '0',
+        responsibilityTeam: ''
+      },
+      loading: false,
+      areaStatusList: [
+        {
+          label: '全部',
+          value: '0'
+        },
+        {
+          label: '新增',
+          value: '1'
+        },
+        {
+          label: '已删除',
+          value: '2'
+        }
+      ], // 区域状态
+      responsibilityTeamList: [], // 责任区队
+      dataList: [{
+        id: '12987122',
+        areaName: '行人（副）斜井底',
+        num: '12',
+        team: '井下机电队',
+        personTotal: '12',
+        noteTotal: '5'
+      },{
+        id: '129872122',
+        areaName: '1#永久避难硐室',
+        num: '12',
+        team: '井下机电队',
+        personTotal: '12',
+        noteTotal: '5'
+      },{
+        id: '129874122',
+        areaName: '集中辅运巷',
+        num: '12',
+        team: '井下机电队',
+        personTotal: '12',
+        noteTotal: '5'
+      },{
+        id: '142987122',
+        areaName: '井口',
+        num: '12',
+        team: '井下机电队',
+        personTotal: '12',
+        noteTotal: '5'
+      },{
+        id: '129587122',
+        areaName: '3308综采工作面',
+        num: '12',
+        team: '井下机电队',
+        personTotal: '12',
+        noteTotal: '5'
+      }],
+      tableRowKey: 'id',
+      expandRowKeys: [],
+    };
+  },
+  mounted() {
+    this.refreshList();
+  },
+  computed: {},
+  methods: {
+    // 获取数据列表
+    refreshList() {
+      // this.loading = true
+
+    },
+    // 重置
+    resetSearch() {
+      this.$refs.searchForm.resetFields();
+      this.refreshList();
+    },
+    // 新增
+    add(row) {
+
+    },
+    // 编辑
+    edit(row) {
+
+    },
+    // 删除
+    del(row) {
+      this.$confirm(`确定删除区域“${row.areaName}”所选项吗?`, '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      }).then(() => {
+        // this.loading = true
+
+      })
+    },
+    // 短信通知人数
+    roSmsNotification(row) {
+
+    },
+    // 区队人数
+    toDistrictTeam(row) {
+
+    },
+    // 展开行
+    tableExpandChange(expandedRows) {
+      this.expandCurRow(expandedRows)
+    },
+    // 点击某行
+    rowClick(row) {
+      this.expandCurRow(row)
+    },
+    // 点击展开/收缩当前行
+    expandCurRow(row) {
+      if(this.expandRowKeys.length) { // 点击已展开的行 就要收起
+        if(this.expandRowKeys.indexOf(row[this.tableRowKey]) >= 0) {
+          this.expandRowKeys = []
+          return
+        }
+      }
+      this.expandRowKeys = [row[this.tableRowKey]]
+    },
+    tableRowClassName({ row, rowIndex }) {
+      return "warning-row";
+    },
+  },
+};
+</script>
+<style scoped>
+.substation {
+  width: 100%;
+  padding-top: 0.1042rem;
+  box-sizing: border-box;
+}
+.substation > div {
+  width: 99%;
+  margin: 0 auto;
+}
+
+.expand-content {
+  width: 100%;
+  padding-left: 100px;
+  box-sizing: border-box;
+}
+.expand-content > div {
+  width: 100%;
+  height: .2813rem;
+  display: flex;
+  border-bottom: 1px solid rgba(0, 118, 200, .5);
+  display: flex;
+  padding-left: 10px;
+  box-sizing: border-box;
+}
+.expand-content > div > div {
+  /* width: 20%; */
+  height: 100%;
+  line-height: .2813rem;
+  text-align: center;
+  color: #FFFFFF;
+  font-size: .0677rem;
+}
+/deep/ .el-input__inner {
+  background-color: transparent !important;
+  border: 1px solid #0076c8 !important;
+  color: #fff;
+  margin-bottom: 0.052083rem;
+  font-size: 0.067708rem;
+  /* width: 1.8229rem!important; */
+  height: 0.145833rem;
+  padding: 0 0.0781rem;
+  /* line-height: 0.2083rem; */
+}
+
+/deep/ .el-date-editor .el-range-input {
+  background: transparent !important;
+}
+
+/deep/ .el-form-item__content {
+  line-height: 0.2083rem;
+}
+
+/deep/ .el-date-editor .el-range__icon {
+  font-size: 0.0729rem;
+  margin-left: -0.026rem;
+  line-height: 0.125rem;
+}
+
+/deep/ .el-date-editor .el-range-separator {
+  color: #c0c4cc;
+}
+
+/deep/ .el-input__icon {
+  width: 0.1302rem;
+}
+
+/deep/ .el-range-editor--small .el-range-input {
+  font-size: 0.0677rem;
+}
+/deep/ .el-range-editor--small .el-range-separator {
+  line-height: 0.125rem;
+  font-size: 0.0677rem;
+}
+/deep/ .el-form--inline .el-form-item__label {
+  color: #c0c4cc;
+  font-size: 0.078125rem;
+  line-height: 0.2083rem;
+}
+
+/deep/ .el-range-editor.el-input__inner {
+  padding: 0.0104rem 0.0521rem;
+}
+
+/deep/ .el-form-item {
+  margin-bottom: 0.1146rem;
+}
+
+/deep/ .el-button--mini,
+.el-button--small {
+  font-size: 0.0625rem;
+}
+
+/deep/ .el-date-table {
+  font-size: 0.0625rem !important;
+}
+
+/deep/.is-leaf {
+  background-color: #3c4860 !important;
+  color: #fff;
+}
+
+/deep/ .el-table {
+  background-color: transparent;
+}
+
+/deep/ .el-table thead {
+  height: 0.244792rem;
+}
+
+/deep/.el-table .warning-row {
+  background: #1c233b;
+  color: #fff;
+  height: 0.286458rem !important;
+  line-height: 0.286458rem !important;
+}
+
+/deep/.el-table td,
+/deep/.el-table th.is-leaf {
+  border-bottom: 0.0052rem solid #0076c8;
+  border-right: none;
+}
+
+/deep/.el-table tbody tr:hover > td {
+  background-color: rgba(60, 72, 96, 0.3) !important;
+  color: #91c9fc;
+  cursor: pointer;
+}
+/deep/.el-table tbody tr.expanded:hover > td {
+  background-color: #1a5695!important;
+  color: #91c9fc;
+  cursor: pointer;
+}
+/deep/ .el-table__body tr.expanded>td{
+  background-color: #1a5695!important;
+  color: #91c9fc;
+}
+/deep/ .el-table__cell.el-table__expanded-cell {
+  background: #1c233a!important;
+}
+/deep/ .el-table__cell.el-table__expanded-cell:hover {
+  background: #1c233a!important;
+}
+/deep/ .el-table__expand-icon>.el-icon {
+  color: #fff;
+}
+
+/deep/.el-table::before {
+  height: 0 !important;
+}
+
+/deep/ .el-table .cell {
+  font-size: 0.072917rem;
+}
+
+/deep/ .el-table--border,
+.el-table--group {
+  /* border: .0052rem solid #0076c8; */
+  border: none;
+}
+
+/deep/ .el-input--mini .el-input__icon {
+  line-height: 0.2448rem;
+}
+
+
+/*  右边的白线  */
+/deep/ .el-table--border::after {
+  background-color: transparent!important;
+}
+</style>
+</body>
+</html>
