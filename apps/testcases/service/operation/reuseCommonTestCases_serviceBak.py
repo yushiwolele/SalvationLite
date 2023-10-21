@@ -21,7 +21,6 @@ logger = logging.getLogger('salvation')
 
 class ReuseCommonTestCases:
     def __init__(self):
-        #self.formwork_path = '配置文件'
         self.testcase_filename = '' #读取目标excel名
         self.extract_sheetname = '用例设计' #读取目标excel的sheet页的名
         self.extract_rowbegin = 1 #读取的起始行
