@@ -52,9 +52,6 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'django_filters',
     'oauth',
-    'project',
-    'element',
-    'tool',
     'testcases'
 
 ]
@@ -98,13 +95,26 @@ WSGI_APPLICATION = 'Salvation.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+#开发环境
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'salvationlite',
+#         'USER': 'root',
+#         'PASSWORD': 'root',
+#         'HOST': '127.0.0.1',
+#         'PORT': 3306,
+#         'OPTIONS': {'charset': 'utf8'}
+#     }
+# }
+#生产环境
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'salvation',
+        'NAME': 'salvationlite',
         'USER': 'root',
-        'PASSWORD': 'root',
-        'HOST': '127.0.0.1',
+        'PASSWORD': 'Root123456@',
+        'HOST': '39.107.116.197',
         'PORT': 3306,
         'OPTIONS': {'charset': 'utf8'}
     }
